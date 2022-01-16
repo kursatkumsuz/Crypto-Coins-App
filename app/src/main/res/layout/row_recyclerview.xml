@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="100dp"
+    android:layout_gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#0E1642"
+    android:layout_margin="4dp"
+    android:elevation="100dp"
+    app:cardUseCompatPadding="true"
+    android:outlineSpotShadowColor="#FFFFFF"
+    android:outlineAmbientShadowColor="#FFFFFF"
+    app:cardCornerRadius="20dp">
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:text="BTC"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"></TextView>
+
+
+
+    <TextView
+        android:id="@+id/priceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#BDB7B7"
+        android:text="42843"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:textSize="20dp"></TextView>
+
+
+</androidx.cardview.widget.CardView>
