@@ -1,20 +1,17 @@
 package com.kursatdrhistoryapp.cryptocoins.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.kursatdrhistoryapp.cryptocoins.R
 import com.kursatdrhistoryapp.cryptocoins.databinding.RowRecyclerviewBinding
+import com.kursatdrhistoryapp.cryptocoins.fragment.FeedFragmentDirections
 import com.kursatdrhistoryapp.cryptocoins.model.CoinModel
 
-class RVAdapter (private val coinList : ArrayList<CoinModel>) : RecyclerView.Adapter<RVAdapter.RowHolder>() {
+class RecyclerViewAdapter (private val coinList : List<CoinModel>) : RecyclerView.Adapter<RecyclerViewAdapter.RowHolder>() {
 
 
-    class RowHolder (val binding: RowRecyclerviewBinding): RecyclerView.ViewHolder(binding.root) {
-
-
-    }
+    class RowHolder (val binding: RowRecyclerviewBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowHolder {
 
@@ -24,9 +21,13 @@ class RVAdapter (private val coinList : ArrayList<CoinModel>) : RecyclerView.Ada
 
     override fun onBindViewHolder(holder: RowHolder, position: Int) {
 
-        holder.binding.nameText.text = coinList.get(position).currency
-        holder.binding.priceText.text = "$"+ coinList.get(position).price
+        holder.binding.nameText.text = coinList[position].currency
+        holder.binding.priceText.text = coinList[position].price
 
+        holder.itemView.setOnClickListener {
+            val action = FeedFragmentDirections.actionFeedFragmentToPopUpFragment(1)
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
     override fun getItemCount(): Int {
