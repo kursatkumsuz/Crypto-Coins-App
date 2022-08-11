@@ -1,11 +1,16 @@
 package com.kursatdrhistoryapp.cryptocoins.model
 
-import com.google.gson.annotations.SerializedName
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-data class CoinModel (
-    //@SerializedName ("currency")
-    val currency : String,
-
-    //@SerializedName ("price")
-    val price : String
-    )
+@Entity
+data class CoinModel(
+    @ColumnInfo(name = "currency")
+    val currency: String,
+    @ColumnInfo(name = "price")
+    val price: String
+) {
+    @PrimaryKey(autoGenerate = true)
+    var primaryKey: Int = 0
+}
