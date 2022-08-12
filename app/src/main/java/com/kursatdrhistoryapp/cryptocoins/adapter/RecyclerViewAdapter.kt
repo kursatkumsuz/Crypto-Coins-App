@@ -25,7 +25,7 @@ class RecyclerViewAdapter (private val coinList : List<CoinModel>) : RecyclerVie
         holder.binding.priceText.text = coinList[position].price
 
         holder.itemView.setOnClickListener {
-            val action = FeedFragmentDirections.actionFeedFragmentToPopUpFragment(1)
+            val action = FeedFragmentDirections.actionFeedFragmentToPopUpFragment(coinList[position].primaryKey)
             Navigation.findNavController(it).navigate(action)
         }
     }
