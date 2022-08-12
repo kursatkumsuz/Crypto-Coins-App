@@ -33,7 +33,7 @@ class FeedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(this)[FeedViewModel::class.java]
-        viewModel.getDataFromAPI()
+        viewModel.loadData()
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
 
         observeLiveData()
