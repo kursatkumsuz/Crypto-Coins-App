@@ -2,6 +2,7 @@ package com.kursatdrhistoryapp.cryptocoins.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.kursatdrhistoryapp.cryptocoins.databinding.RowRecyclerviewBinding
@@ -20,6 +21,9 @@ class RecyclerViewAdapter (private val coinList : List<CoinModel>) : RecyclerVie
     }
 
     override fun onBindViewHolder(holder: RowHolder, position: Int) {
+
+        val anim = AnimationUtils.loadAnimation(holder.itemView.context , android.R.anim.fade_in)
+        holder.itemView.startAnimation(anim)
 
         holder.binding.nameText.text = coinList[position].currency
         holder.binding.priceText.text = coinList[position].price
